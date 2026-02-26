@@ -1,5 +1,6 @@
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const gardenRoutes = require("./routes/garden");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -11,9 +12,10 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/gardens", gardenRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Backend Geopotager OK 🚀");
+  res.send("BACKEND ACTUEL TEST 🔥");
 });
 
 mongoose
