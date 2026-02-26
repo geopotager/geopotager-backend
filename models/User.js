@@ -13,6 +13,17 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    gardenCenter: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "GardenCenter",
+      required: true,
+    },
+    resetPasswordToken: {
+      type: String,
+    },
+    resetPasswordExpires: {
+      type: Date,
+    },
   },
   { timestamps: true }
 );
