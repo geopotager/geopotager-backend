@@ -4,10 +4,15 @@ const PlotSchema = new mongoose.Schema({
   name: { type: String },
   surface: { type: Number },
   crop: { type: String },
+
   x: { type: Number, default: 0 },
   y: { type: Number, default: 0 },
   width: { type: Number, default: 100 },
-  height: { type: Number, default: 50 }
+  height: { type: Number, default: 50 },
+  color: {
+    type: String,
+    default: "#A3D977" // couleur par défaut cohérente
+  }
 });
 
 const GardenSchema = new mongoose.Schema(
