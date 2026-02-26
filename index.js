@@ -8,7 +8,10 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+  credentials: true
+}));
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
@@ -25,5 +28,5 @@ mongoose
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`API running on http://localhost:${PORT}`);
+  console.log(`API running on port ${PORT}`);
 });
